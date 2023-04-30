@@ -202,7 +202,7 @@ class Test_1a(GradedTestCase):
     random.seed(35436)
     np.random.seed(4355)
 
-  @graded(is_hidden=True)
+  @graded(is_hidden=False)
   def test_0(self):
     """1a-0-hidden:  pad sentences"""
     sents = [
@@ -397,17 +397,17 @@ class Test_1d(GradedTestCase):
                                                                                               dec_init_state_pred[1])
     print("dec_init_state[1] Sanity Checks Passed!")
 
-  @graded(is_hidden=True)
+  @graded(is_hidden=False)
   def test_1(self):
       """1d-1-hidden: Encode Hiddens Check"""
       self.assertTrue(self.enc_hidden)
 
-  @graded(is_hidden=True)
+  @graded(is_hidden=False)
   def test_2(self):
       """1d-2-hidden: dec_state[0] Check"""
       self.assertTrue(self.decode_hidden)
 
-  @graded(is_hidden=True)
+  @graded(is_hidden=False)
   def test_3(self):
       """1d-3-hidden: dec_state[1] Check"""
       self.assertTrue(self.decode_cell)
@@ -469,7 +469,7 @@ class Test_1e(GradedTestCase):
                         combined_outputs_target.numpy())), "combined_outputs is should be:\n {}, but is:\n{}".format(
         combined_outputs_target, combined_outputs_pred)
 
-  @graded(is_hidden=True)
+  @graded(is_hidden=False)
   def test_1(self):
     """1e-1-hidden: Combined Outputs Check"""
     # Set Seeds
@@ -642,22 +642,22 @@ class Test_1f(GradedTestCase):
         np.allclose(e_t_target.numpy(), e_t_pred.numpy()), "e_t should be:\n {} but is:\n{}".format(
         e_t_target, e_t_pred))
 
-  @graded(is_hidden=True)
+  @graded(is_hidden=False)
   def test_1(self):
     """1f-1-hidden: Decoder Hiddens Check"""
     self.assertTrue(self.dec_hidden_result)
 
-  @graded(is_hidden=True)
+  @graded(is_hidden=False)
   def test_2(self):
     """1f-2-hidden: Decoder State Check"""
     self.assertTrue(self.dec_state_result)
 
-  @graded(is_hidden=True)
+  @graded(is_hidden=False)
   def test_3(self):
     """1f-3-hidden: o_t Check"""
     self.assertTrue(self.o_t_result)
 
-  @graded(is_hidden=True)
+  @graded(is_hidden=False)
   def test_4(self):
     """1f-4-hidden: e_t Check"""
     self.assertTrue(self.e_t_result)

@@ -108,6 +108,8 @@ class HiddenPrints:
 class GradedTestCase(unittest.TestCase):
   def __init__(self, *args, **kwargs):
     super().__init__(*args, **kwargs)
+    import time
+    self.starttime = time.time()
     self.isWritten = False
     self.loadWeights()
 
